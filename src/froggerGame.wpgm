@@ -1,0 +1,32 @@
+import wollok.game.*
+import rana.*
+import vehiculos.*
+
+program FroggerGame {
+	
+//	CONFIG	
+	game.title("Frogger")
+	game.height(13)
+	game.width(22)
+	game.ground("asfalto2.png")
+
+//	VISUALES
+	game.addVisual(rana)
+    game.addVisual(auto)
+    game.addVisual(auto2)
+    
+    game.onTick(600, "avanza", {auto.avanzar(auto.position().right(1))})
+    game.onTick(400, "avanza", {auto2.avanzar(auto2.position().right(1))})
+
+//	TECLADO
+    
+	keyboard.up().onPressDo { rana.move(rana.position().up(1)) }
+	keyboard.down().onPressDo { rana.move(rana.position().down(1)) }
+	keyboard.left().onPressDo { rana.move(rana.position().left(1)) }
+	keyboard.right().onPressDo { rana.move(rana.position().right(1)) }
+	
+    game.onCollideDo(rana, {colisionado => colisionado.teEncontro(rana)})
+		
+//	START
+	game.start()
+}

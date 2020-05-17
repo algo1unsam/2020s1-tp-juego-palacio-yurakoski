@@ -1,12 +1,13 @@
 import wollok.game.*
 import rana.*
 import vehiculos.*
+import casas.*
 
 program FroggerGame {
 	
 //	CONFIG	
 	game.title("Frogger")
-	game.height(13)
+	game.height(12)
 	game.width(22)
 	game.ground("asfalto2.png")
 
@@ -14,6 +15,7 @@ program FroggerGame {
 	game.addVisual(rana)
     game.addVisual(auto)
     game.addVisual(auto2)
+    game.addVisual(casa)
     
     game.onTick(600, "avanza", {auto.avanzar(auto.position().right(1))})
     game.onTick(400, "avanza", {auto2.avanzar(auto2.position().right(1))})

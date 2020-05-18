@@ -2,7 +2,7 @@ import wollok.game.*
 
 object rana {
 
-	var property position = game.at(7, 1)
+	var property position = game.at(7, 0)
 
 	method image() = "rana.png"
 
@@ -11,3 +11,4 @@ object rana {
 	}
 
 }
+

@@ -4,31 +4,34 @@ import vehiculos.*
 import casas.*
 
 program FroggerGame {
-	
 //	CONFIG	
 	game.title("Frogger")
 	game.height(12)
 	game.width(22)
 	game.ground("asfalto2.png")
-
+	
 //	VISUALES
 	game.addVisual(rana)
-    game.addVisual(auto)
-    game.addVisual(auto2)
-    game.addVisual(casa)
-    
-    game.onTick(600, "avanza", {auto.avanzar(auto.position().right(1))})
-    game.onTick(400, "avanza", {auto2.avanzar(auto2.position().right(1))})
-
-//	TECLADO
-    
-	keyboard.up().onPressDo { rana.move(rana.position().up(1)) }
-	keyboard.down().onPressDo { rana.move(rana.position().down(1)) }
-	keyboard.left().onPressDo { rana.move(rana.position().left(1)) }
-	keyboard.right().onPressDo { rana.move(rana.position().right(1)) }
+	game.addVisual(auto)
+	game.addVisual(auto2)
+	game.addVisual(estanque1)
+	game.addVisual(estanque2)
+	game.addVisual(estanque3)
+	game.addVisual(estanque4)
+	game.addVisual(estanque5)
+	game.addVisual(camion)
+	game.onTick(150, "avanza", { auto.avanzar(auto.position().right(1)) })
+	game.onTick(200, "avanza", { auto2.avanzar(auto2.position().right(1)) })
+	game.onTick(100, "avanza", { camion.avanzar(camion.position().left(1)) })
 	
-    game.onCollideDo(rana, {colisionado => colisionado.teEncontro(rana)})
-		
+//	TECLADO
+	keyboard.w().onPressDo{ rana.move(rana.position().up(1)) }
+	keyboard.s().onPressDo{ rana.move(rana.position().down(1)) }
+	keyboard.a().onPressDo{ rana.move(rana.position().left(1)) }
+	keyboard.d().onPressDo{ rana.move(rana.position().right(1)) }
+	
+	game.onCollideDo(rana, { colisionado => colisionado.teEncontro(rana) })
+	
 //	START
 	game.start()
 }

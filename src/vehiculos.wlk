@@ -15,6 +15,8 @@ object auto {
 		game.removeVisual(anfibio)
 		anfibio.position(game.at(7, 0))
 		game.addVisual(anfibio)
+		anfibio.puntos(0)
+		game.say(anfibio, "perdi todos los puntos")
 	}
 
 }
@@ -33,6 +35,8 @@ object auto2 {
 		game.removeVisual(anfibio)
 		anfibio.position(game.at(7, 0))
 		game.addVisual(anfibio)
+		anfibio.puntos(0)
+		game.say(anfibio, "perdi todos los puntos")
 	}
 
 }
@@ -51,6 +55,8 @@ object camion {
 		game.removeVisual(anfibio)
 		anfibio.position(game.at(7, 0))
 		game.addVisual(anfibio)
+		anfibio.puntos(0)
+		game.say(anfibio, "perdi todos los puntos")
 	}
 
 }

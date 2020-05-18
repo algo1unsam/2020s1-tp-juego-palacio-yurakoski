@@ -29,8 +29,10 @@ program FroggerGame {
 	keyboard.s().onPressDo{ rana.move(rana.position().down(1)) }
 	keyboard.a().onPressDo{ rana.move(rana.position().left(1)) }
 	keyboard.d().onPressDo{ rana.move(rana.position().right(1)) }
+	keyboard.p().onPressDo{ game.say(rana, "Tengo " + rana.puntos() + " puntos!!!") }
 	
 	game.onCollideDo(rana, { colisionado => colisionado.teEncontro(rana) })
+	
 	
 //	START
 	game.start()

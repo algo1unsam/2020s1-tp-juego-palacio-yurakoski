@@ -45,7 +45,7 @@ program FroggerGame {
 	game.onTick(100, "avanza", { camion.avanzar(camion.position().left(1)) })
 	
 //	TECLADO
-	keyboard.w().onPressDo{ rana.move(rana.position().up(1)) }
+	keyboard.w().onPressDo{ rana.noMoverArriba(rana.position().up(1)) }
 	keyboard.s().onPressDo{ rana.move(rana.position().down(1)) }
 	keyboard.a().onPressDo{ rana.move(rana.position().left(1)) }
 	keyboard.d().onPressDo{ rana.move(rana.position().right(1)) }

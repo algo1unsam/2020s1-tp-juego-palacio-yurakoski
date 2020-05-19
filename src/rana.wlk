@@ -1,4 +1,5 @@
 import wollok.game.*
+import bloques.*
 
 
 object rana {
@@ -14,6 +15,7 @@ object rana {
 		
 	method sumaPuntos(){puntos = puntos + 150}
 	
-	method hizoTope(){return true}
-
-}
+	method noMoverArriba(nuevaPosicion){
+		if(!(bloque.bloques().any({ unBloque => nuevaPosicion == unBloque.position()}))){self.position(nuevaPosicion)}
+	}}
+	

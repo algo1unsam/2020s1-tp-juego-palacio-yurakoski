@@ -1,4 +1,6 @@
 import wollok.game.*
+import bloques.*
+
 
 object rana {
 	
@@ -6,12 +8,14 @@ object rana {
 
 	var property position = game.at(7, 0)
 
-	method image() = "rana.png"
+	var property image = "rana.png"
 
 	method move(nuevaPosicion) {
-		self.position(nuevaPosicion)
-	}
+		self.position(nuevaPosicion)}
+		
 	method sumaPuntos(){puntos = puntos + 150}
-
-}
-
+	
+	method noMoverArriba(nuevaPosicion){
+		if(!(bloque.bloques().any({ unBloque => nuevaPosicion == unBloque.position()}))){self.position(nuevaPosicion)}
+	}}
+	

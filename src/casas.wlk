@@ -7,7 +7,7 @@ class Casa {
 
 	 var property image = "estanque.png"
 
-	method teEncontro(anfibio) {
+		method teEncontro(anfibio) {
 		game.removeVisual(anfibio)
 		anfibio.position(game.at(7, 0))
 		game.addVisual(anfibio)

@@ -2,6 +2,7 @@ import wollok.game.*
 import rana.*
 import vehiculos.*
 import casas.*
+import bloques.*
 
 program FroggerGame {
 //	CONFIG	
@@ -20,7 +21,26 @@ program FroggerGame {
 	game.addVisual(estanque4)
 	game.addVisual(estanque5)
 	game.addVisual(camion)
-	game.onTick(150, "avanza", { auto.avanzar(auto.position().right(1)) })
+	game.addVisual(bloque1)
+	game.addVisual(bloque2)
+	game.addVisual(bloque3)
+	game.addVisual(bloque4)
+	game.addVisual(bloque6)
+	game.addVisual(bloque7)
+	game.addVisual(bloque8)
+	game.addVisual(bloque9)
+	game.addVisual(bloque11)
+	game.addVisual(bloque12)
+	game.addVisual(bloque13)
+	game.addVisual(bloque14)
+	game.addVisual(bloque16)
+	game.addVisual(bloque17)
+	game.addVisual(bloque18)
+	game.addVisual(bloque19)
+	game.addVisual(bloque21)
+	game.addVisual(bloque22)
+	
+	game.onTick(20, "avanza", { auto.avanzar(auto.position().right(1)) }) 
 	game.onTick(200, "avanza", { auto2.avanzar(auto2.position().right(1)) })
 	game.onTick(100, "avanza", { camion.avanzar(camion.position().left(1)) })
 	

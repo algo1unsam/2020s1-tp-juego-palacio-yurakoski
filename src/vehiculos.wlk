@@ -37,6 +37,7 @@ object auto2 {
 		game.addVisual(anfibio)
 		anfibio.puntos(0)
 		game.say(anfibio, "perdi todos los puntos")
+		
 	}
 
 }
@@ -57,6 +58,7 @@ object camion {
 		game.addVisual(anfibio)
 		anfibio.puntos(0)
 		game.say(anfibio, "perdi todos los puntos")
+		
 	}
 
 }

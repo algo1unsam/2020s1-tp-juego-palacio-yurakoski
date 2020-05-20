@@ -32,4 +32,9 @@ const bloque22 = new Bloque(position=game.at(22,12))
 object bloque{
 	
 	const property bloques = [bloque1,bloque2,bloque3,bloque4,bloque6,bloque7,bloque8,bloque9,bloque11,bloque12,bloque13,bloque14,bloque16,bloque17,bloque18,bloque19,bloque21,bloque22]
-}
+
+method noMoverArriba(nuevaPosicion){
+		if(!(bloques.any({ unBloque => nuevaPosicion == unBloque.position()}))){rana.position(nuevaPosicion)}
+	}}
+	
+

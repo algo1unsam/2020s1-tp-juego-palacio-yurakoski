@@ -15,7 +15,4 @@ object rana {
 		
 	method sumaPuntos(){puntos = puntos + 150}
 	
-	method noMoverArriba(nuevaPosicion){
-		if(!(bloque.bloques().any({ unBloque => nuevaPosicion == unBloque.position()}))){self.position(nuevaPosicion)}
-	}}
-	
+	}

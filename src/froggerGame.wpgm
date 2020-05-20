@@ -22,7 +22,7 @@ program FroggerGame {
 	game.addVisual(estanque5)
 	game.addVisual(camion)
 	
-	bloque.bloques().forEach({unBloque => game.addVisual(unBloque)})
+	limite.limites().forEach({unLimite => game.addVisual(unLimite)})
 	
 	
 	game.onTick(20, "avanza", { auto.avanzar(auto.position().right(1)) }) 
@@ -30,10 +30,10 @@ program FroggerGame {
 	game.onTick(100, "avanza", { camion.avanzar(camion.position().left(1)) })
 	
 //	TECLADO
-	keyboard.w().onPressDo{ bloque.noMoverArriba(rana.position().up(1)) }
-	keyboard.s().onPressDo{ rana.move(rana.position().down(1)) }
-	keyboard.a().onPressDo{ rana.move(rana.position().left(1)) }
-	keyboard.d().onPressDo{ rana.move(rana.position().right(1)) }
+	keyboard.w().onPressDo{ limite.noMoverFueraDeLimites(rana.position().up(1)) }
+	keyboard.s().onPressDo{ limite.noMoverFueraDeLimites(rana.position().down(1)) }
+	keyboard.a().onPressDo{ limite.noMoverFueraDeLimites(rana.position().left(1)) }
+	keyboard.d().onPressDo{ limite.noMoverFueraDeLimites(rana.position().right(1)) }
 	keyboard.p().onPressDo{ game.say(rana, "Tengo " + rana.puntos() + " puntos!!!") }
 	
 	game.onCollideDo(rana, { colisionado => colisionado.teEncontro(rana) })

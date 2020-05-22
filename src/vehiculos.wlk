@@ -1,14 +1,14 @@
 import wollok.game.*
 import rana.*
 
-object auto {
+class Vehiculo {
 
-	var property position = game.at(-1, 3)
-
-	method image() = "auto3.png"
+	var property position
+	var property image
 
 	method avanzar(nuevaPosicion) {
-		if (nuevaPosicion != game.at(23, 3)) self.position(nuevaPosicion) else self.position(game.at(-1, 3))
+		var y = nuevaPosicion.y()
+		if (nuevaPosicion != game.at(23, y)) self.position(nuevaPosicion) else self.position(game.at(-1, y))
 	}
 
 	method teEncontro(anfibio) {
@@ -21,45 +21,12 @@ object auto {
 
 }
 
-object auto2 {
-
-	var property position = game.at(-3, 5)
-
-	method image() = "autoceleste.png"
-
-	method avanzar(nuevaPosicion) {
-		if (nuevaPosicion != game.at(23, 5)) self.position(nuevaPosicion) else self.position(game.at(-3, 5))
-	}
-
-	method teEncontro(anfibio) {
-		game.removeVisual(anfibio)
-		anfibio.position(game.at(7, 0))
-		game.addVisual(anfibio)
-		anfibio.puntos(0)
-		game.say(anfibio, "perdi todos los puntos")
-		
-	}
-
-}
-
-object camion {
-
-	var property position = game.at(24, 7)
-
-	method image() = "africanos.png"
-
-	method avanzar(nuevaPosicion) {
-		if (nuevaPosicion != game.at(-1, 7)) self.position(nuevaPosicion) else self.position(game.at(24, 7))
-	}
-
-	method teEncontro(anfibio) {
-		game.removeVisual(anfibio)
-		anfibio.position(game.at(7, 0))
-		game.addVisual(anfibio)
-		anfibio.puntos(0)
-		game.say(anfibio, "perdi todos los puntos")
-		
-	}
-
-}
+//INSTANCIAS DE LOS VEHICULOS
+const auto1 = new Vehiculo(position = game.at(7, 2), image = "autoVerde.png")
+const auto2 = new Vehiculo(position = game.at(13, 3), image = "autoRojo.png")
+const auto3 = new Vehiculo(position = game.at(5, 4), image = "autoGris.png")
+const auto4 = new Vehiculo(position = game.at(10, 5), image = "autoAmarillo.png")
+const auto5 = new Vehiculo(position = game.at(8, 6), image = "africanos.png")
+const auto6 = new Vehiculo(position = game.at(1, 7), image = "autoVerde.png")
+const auto7 = new Vehiculo(position = game.at(1, 8), image = "autoAmarillo.png")
 

@@ -10,9 +10,16 @@ object rana {
 
 	var property image = "rana.png"
 
+	var property estanques = 0
+
 	method move(nuevaPosicion) {
 		self.position(nuevaPosicion)}
 		
 	method sumaPuntos(){puntos = puntos + 150}
 	
+	method sumarEstanques(){
+		estanques += 1
+		if (estanques == 5)	self.image("ganadora.png")
+	}
+
 	}

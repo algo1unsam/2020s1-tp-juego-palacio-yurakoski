@@ -42,7 +42,8 @@ program FroggerGame {
 	keyboard.s().onPressDo{ limite.noMoverFueraDeLimites(rana.position().down(1)) }
 	keyboard.a().onPressDo{ limite.noMoverFueraDeLimites(rana.position().left(1)) }
 	keyboard.d().onPressDo{ limite.noMoverFueraDeLimites(rana.position().right(1)) }
-	keyboard.p().onPressDo{ game.say(rana, "Tengo " + rana.puntos() + " puntos!!!") }
+	keyboard.p().onPressDo{ game.say(rana, "Tengo " + rana.puntos() + " puntos!!!") } 	
+	keyboard.e().onPressDo{ game.say(rana, "Tengo " + rana.estanques()+ " estanques!!!") }
 	
 	game.onCollideDo(rana, { colisionado => colisionado.teEncontro(rana) })
 	

@@ -1,6 +1,6 @@
 import wollok.game.*
 import bloques.*
-
+import casas.*
 
 object rana {
 	
@@ -12,6 +12,8 @@ object rana {
 
 	var property estanques = 0
 
+	var vidas = [vidas1,vidas2,vidas3]
+
 	method move(nuevaPosicion) {
 		self.position(nuevaPosicion)}
 		
@@ -21,5 +23,13 @@ object rana {
 		estanques += 1
 		if (estanques == 5)	self.image("ganadora.png")
 	}
-
+	
+	method restarVidas(){
+		game.removeVisual(vidas.last())
+		vidas.remove(vidas.last())		
+		if (vidas.size() == 0)	self.image("perdiste.png")
 	}
+
+	method vidas() = vidas.size()
+
+}

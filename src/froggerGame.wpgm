@@ -25,6 +25,10 @@ program FroggerGame {
 	game.addVisual(estanque3)
 	game.addVisual(estanque4)
 	game.addVisual(estanque5)
+	
+	game.addVisual(vidas1)
+	game.addVisual(vidas2)
+	game.addVisual(vidas3)	
 
 	limite.limites().forEach({unLimite => game.addVisual(unLimite)})
 	
@@ -42,7 +46,9 @@ program FroggerGame {
 	keyboard.s().onPressDo{ limite.noMoverFueraDeLimites(rana.position().down(1)) }
 	keyboard.a().onPressDo{ limite.noMoverFueraDeLimites(rana.position().left(1)) }
 	keyboard.d().onPressDo{ limite.noMoverFueraDeLimites(rana.position().right(1)) }
-	keyboard.p().onPressDo{ game.say(rana, "Tengo " + rana.puntos() + " puntos!!!") }
+	keyboard.p().onPressDo{ game.say(rana, "Tengo " + rana.puntos() + " puntos!!!") } 	
+	keyboard.e().onPressDo{ game.say(rana, "Tengo " + rana.estanques()+ " estanques!!!")}
+	keyboard.v().onPressDo{ game.say(rana, "Tengo " + rana.vidas()+ " vidas!!!")}
 	
 	game.onCollideDo(rana, { colisionado => colisionado.teEncontro(rana) })
 	

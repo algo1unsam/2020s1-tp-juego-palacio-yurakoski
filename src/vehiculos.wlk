@@ -12,11 +12,13 @@ class Vehiculo {
 	}
 
 	method teEncontro(anfibio) {
+		rana.restarVidas()
 		game.removeVisual(anfibio)
 		anfibio.position(game.at(7, 0))
 		game.addVisual(anfibio)
 		anfibio.puntos(0)
-		game.say(anfibio, "perdi todos los puntos")
+		game.say(anfibio, "perdi todos los puntos y una vida")
+		
 	}
 
 }

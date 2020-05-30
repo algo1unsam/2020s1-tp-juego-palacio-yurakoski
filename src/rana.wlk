@@ -6,7 +6,7 @@ object rana {
 	
 	var property puntos = 0
 
-	var property position = game.at(7, 0)
+	var property position = game.at(10,0)
 
 	var property image = "rana.png"
 
@@ -21,7 +21,8 @@ object rana {
 	
 	method sumarEstanques(){
 		estanques += 1
-		if (estanques == 5)	self.image("ganadora.png")
+		if (estanques == 5)	
+		self.image("ganadora.png")
 	}
 	
 	method restarVidas(){

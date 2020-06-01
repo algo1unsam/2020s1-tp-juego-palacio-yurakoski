@@ -7,8 +7,7 @@ import bloques.*
 object visuales {
 
 	method agregarVisuales() {
-		vereda.baldosas().forEach({v=> game.addVisual(v)})
-		
+		vereda.baldosas().forEach({ v => game.addVisual(v)})
 		game.addVisual(rana)
 		game.addVisual(auto1)
 		game.addVisual(auto2)
@@ -25,7 +24,6 @@ object visuales {
 		game.addVisual(vidas1)
 		game.addVisual(vidas2)
 		game.addVisual(vidas3)
-		
 		limite.limites().forEach({ unLimite => game.addVisual(unLimite)})
 	}
 

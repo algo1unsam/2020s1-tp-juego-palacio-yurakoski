@@ -27,6 +27,7 @@ object rana {
 		game.removeVisual(vidas.last())
 		vidas.remove(vidas.last())
 		if (vidas.size() == 0) self.image("perdiste.png")
+		
 	}
 
 	method vidas() = vidas.size()

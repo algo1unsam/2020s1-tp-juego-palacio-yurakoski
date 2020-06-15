@@ -2,6 +2,7 @@ import wollok.game.*
 import bloques.*
 import casas.*
 import rana.*
+import vehiculos.*
 import visuales.*
 
 object primero {
@@ -10,12 +11,21 @@ object primero {
 	var property image = "ranaInicio.jpg"
 
 }
+object fondo {
+	var property position = game.at(0, 0)
+	var property image = "f.jpg"
+}
 
 object configuracion {
 
 	method pantallaInicio() {
 		game.addVisual(primero)
-		keyboard.enter().onPressDo{ self.configuracionInicio()}
+		keyboard.enter().onPressDo{ self.fondoJuego()}
+	}
+	
+	method fondoJuego(){
+		game.addVisual(fondo)
+		self.configuracionInicio()
 	}
 
 	method configuracionInicio() {

@@ -60,7 +60,7 @@ object configuracion {
 object cierre {
 
 	method cerrar() {
-		game.schedule(7000, { game.stop()})
+		game.schedule(6000, { game.stop()})
 	}
 
 }

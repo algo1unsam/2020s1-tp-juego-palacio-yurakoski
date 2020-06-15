@@ -21,7 +21,10 @@ object rana {
 
 	method sumarEstanques() {
 		estanques += 1
-		if (estanques == 5) self.image("ganadora.png")
+		if (estanques == 5) {
+		self.image("ganadora.png")
+		cierre.cerrar()
+		}
 	}
 
 	method restarVidas() {

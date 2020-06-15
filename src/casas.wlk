@@ -50,9 +50,3 @@ const vidas2 = new Vidas(position=game.at(21,10))
 const vidas3 = new Vidas(position=game.at(21,09))
 	
 
-
-	
-	
-	
-	
-

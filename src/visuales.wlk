@@ -16,6 +16,7 @@ object visuales {
 		game.addVisual(auto5)
 		game.addVisual(auto6)
 		game.addVisual(auto7)
+		game.addVisual(auto8)
 		game.addVisual(estanque1)
 		game.addVisual(estanque2)
 		game.addVisual(estanque3)

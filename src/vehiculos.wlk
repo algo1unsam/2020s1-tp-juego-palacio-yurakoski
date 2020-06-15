@@ -1,6 +1,6 @@
 import wollok.game.*
 import rana.*
-import vehiculos.*
+
 
 class Vehiculo {
 
@@ -39,6 +39,7 @@ object movimientos {
 		game.onTick(110, "avanza", { auto5.avanzarIzquierda(auto5.position().left(1))})
 		game.onTick(80, "avanza", { auto6.avanzarIzquierda(auto6.position().left(1))})
 		game.onTick(60, "avanza", { auto7.avanzarIzquierda(auto7.position().left(1))})
+		game.onTick(90, "avanza", { auto8.avanzarIzquierda(auto8.position().left(1))})
 	}
 
 }
@@ -51,4 +52,5 @@ const auto4 = new Vehiculo(position = game.at(10, 5), image = "autoAmarillo.png"
 const auto5 = new Vehiculo(position = game.at(8, 6), image = "africanos.png")
 const auto6 = new Vehiculo(position = game.at(5, 7), image = "autoGris2.png")
 const auto7 = new Vehiculo(position = game.at(7, 8), image = "autoAmarillo2.png")
+const auto8 = new Vehiculo(position = game.at(9, 9), image = "camion.png")
 

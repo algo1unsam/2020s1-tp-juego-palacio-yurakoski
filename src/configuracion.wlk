@@ -11,9 +11,19 @@ object primero {
 	var property image = "ranaInicio.jpg"
 
 }
+
 object fondo {
+
 	var property position = game.at(0, 0)
 	var property image = "f.jpg"
+
+}
+
+object africanos {
+
+	var property position = game.at(0, 0)
+	var property image = "africanosFondo.jpg"
+
 }
 
 object configuracion {
@@ -22,8 +32,8 @@ object configuracion {
 		game.addVisual(primero)
 		keyboard.enter().onPressDo{ self.fondoJuego()}
 	}
-	
-	method fondoJuego(){
+
+	method fondoJuego() {
 		game.addVisual(fondo)
 		self.configuracionInicio()
 	}
@@ -43,6 +53,14 @@ object configuracion {
 		keyboard.e().onPressDo{ game.say(rana, "Tengo " + rana.estanques() + " estanques!!!")}
 		keyboard.v().onPressDo{ game.say(rana, "Tengo " + rana.vidas() + " vidas!!!")}
 		game.onCollideDo(rana, { colisionado => colisionado.teEncontro(rana)})
+	}
+
+}
+
+object cierre {
+
+	method cerrar() {
+		game.schedule(7000, { game.stop()})
 	}
 
 }

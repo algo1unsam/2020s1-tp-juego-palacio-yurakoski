@@ -1,6 +1,7 @@
 import wollok.game.*
 import bloques.*
 import casas.*
+import configuracion.*
 
 object rana {
 
@@ -26,8 +27,11 @@ object rana {
 	method restarVidas() {
 		game.removeVisual(vidas.last())
 		vidas.remove(vidas.last())
-		if (vidas.size() == 0) self.image("perdiste.png")
-		
+		if (vidas.size() == 0) {
+			self.image("perdiste.png")
+			game.addVisual(africanos)
+			cierre.cerrar()
+		}
 	}
 
 	method vidas() = vidas.size()

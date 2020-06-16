@@ -1,5 +1,5 @@
 import wollok.game.*
-import rana.*
+import objetos.*
 import vehiculos.*
 import casas.*
 import bloques.*
@@ -8,7 +8,9 @@ object visuales {
 
 	method agregarVisuales() {
 		//vereda.baldosas().forEach({ v => game.addVisual(v)})
+		
 		game.addVisual(rana)
+		game.addVisual(auto0)
 		game.addVisual(auto1)
 		game.addVisual(auto2)
 		game.addVisual(auto3)
@@ -17,6 +19,7 @@ object visuales {
 		game.addVisual(auto6)
 		game.addVisual(auto7)
 		game.addVisual(auto8)
+		game.addVisual(kun)
 		game.addVisual(estanque1)
 		game.addVisual(estanque2)
 		game.addVisual(estanque3)

@@ -1,5 +1,5 @@
 import wollok.game.*
-import rana.*
+import objetos.*
 import vehiculos.*
 import casas.*
 import bloques.*
@@ -16,3 +16,5 @@ program FroggerGame {
 //	START
 	game.start()
 }
+
+

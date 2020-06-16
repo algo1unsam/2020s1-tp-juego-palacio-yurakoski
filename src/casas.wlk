@@ -1,5 +1,5 @@
 import wollok.game.*
-import rana.*
+import objetos.*
 
 class Casa {
 
@@ -45,8 +45,8 @@ const estanque3 = new Casa(position=game.at(10,11))
 const estanque4 = new Casa(position=game.at(15,11))
 const estanque5 = new Casa(position=game.at(20,11))
 
-const vidas1 = new Vidas(position=game.at(21,11))
-const vidas2 = new Vidas(position=game.at(21,10))
-const vidas3 = new Vidas(position=game.at(21,09))
+const vidas1 = new Vidas(position=game.at(19,0))
+const vidas2 = new Vidas(position=game.at(20,0))
+const vidas3 = new Vidas(position=game.at(21,0))
 	
 

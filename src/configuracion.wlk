@@ -1,30 +1,11 @@
 import wollok.game.*
 import bloques.*
 import casas.*
-import rana.*
+import objetos.*
 import vehiculos.*
 import visuales.*
 
-object primero {
 
-	var property position = game.at(0, 0)
-	var property image = "ranaInicio.jpg"
-
-}
-
-object fondo {
-
-	var property position = game.at(0, 0)
-	var property image = "f.jpg"
-
-}
-
-object africanos {
-
-	var property position = game.at(0, 0)
-	var property image = "africanosFondo.jpg"
-
-}
 
 object configuracion {
 
@@ -42,6 +23,7 @@ object configuracion {
 //	VISUALES
 		game.removeVisual(primero)
 		visuales.agregarVisuales()
+		
 //MOVIMIENTOS VEHICULOS
 		movimientos.movimientosVehiculos()
 //	TECLADO
@@ -53,6 +35,7 @@ object configuracion {
 		keyboard.e().onPressDo{ game.say(rana, "Tengo " + rana.estanques() + " estanques!!!")}
 		keyboard.v().onPressDo{ game.say(rana, "Tengo " + rana.vidas() + " vidas!!!")}
 		game.onCollideDo(rana, { colisionado => colisionado.teEncontro(rana)})
+		game.schedule(5000, { game.removeVisual(kun)})
 	}
 
 }

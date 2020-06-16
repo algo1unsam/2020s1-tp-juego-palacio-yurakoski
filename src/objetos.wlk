@@ -41,3 +41,40 @@ object rana {
 
 }
 
+object primero {
+
+	var property position = game.at(0, 0)
+	var property image = "ranaInicio.jpg"
+
+}
+
+object kun {
+
+	var property position = game.at(0, 0)
+	var property image = "kun.png"
+	
+	method teEncontro(anfibio) {
+	}
+
+}
+
+object fondo {
+
+	var property position = game.at(0, 0)
+	var property image = "f.jpg"
+
+	method teEncontro(anfibio) {
+	}
+
+}
+
+object africanos {
+
+	var property position = game.at(0, 0)
+	var property image = "africanosFondo.jpg"
+
+	method teEncontro(anfibio) {
+	}
+
+}
+

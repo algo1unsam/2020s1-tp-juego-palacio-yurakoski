@@ -1,5 +1,5 @@
 import wollok.game.*
-import rana.*
+import objetos.*
 
 class Limite {
 

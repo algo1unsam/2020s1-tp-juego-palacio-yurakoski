@@ -9,6 +9,7 @@ class Casa {
 
 		method teEncontro(anfibio) {
 		game.addVisualIn(new Bandera(), anfibio.position())	
+		game.sound("bandera.mp3").play()
 		rana.sumarEstanques()
 		game.removeVisual(self)
 		game.removeVisual(anfibio)

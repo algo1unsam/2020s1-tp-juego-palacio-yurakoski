@@ -12,7 +12,7 @@ class Casa {
 		rana.sumarEstanques()
 		game.removeVisual(self)
 		game.removeVisual(anfibio)
-		anfibio.position(game.at(7, 0))
+		anfibio.position(game.at(10, 0))
 		game.addVisual(anfibio)
 		anfibio.sumaPuntos()
 		game.say(anfibio, "Tengo " + anfibio.puntos() + " puntos!!!")

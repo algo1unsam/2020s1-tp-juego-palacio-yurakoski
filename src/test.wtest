@@ -49,6 +49,15 @@ describe "Frogger" {
 		assert.equals(0, rana.puntos())
 	}
 
+	test "Puntaje total obtenido al finalizar el juego sin perder ninguna vida" {
+		estanque1.teEncontro(rana)
+		estanque2.teEncontro(rana)
+		estanque3.teEncontro(rana)
+		estanque4.teEncontro(rana)
+		estanque5.teEncontro(rana)
+		assert.equals(750, rana.puntos())
+	}
+
 	test "Vidas al iniciar el juego" {
 		assert.equals(3, rana.vidas())
 	}
@@ -69,13 +78,6 @@ describe "Frogger" {
 		auto3.teEncontro(rana)
 		assert.equals(game.at(10, 0), rana.position())
 	}
-	test "Puntaje total obtenido al finalizar el juego sin perder ninguna vida"{
-		estanque1.teEncontro(rana)
-		estanque2.teEncontro(rana)
-		estanque3.teEncontro(rana)
-		estanque4.teEncontro(rana)
-		estanque5.teEncontro(rana)
-		assert.equals(750,rana.puntos())
-	}
 
 }
+

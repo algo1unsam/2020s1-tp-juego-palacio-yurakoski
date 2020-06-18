@@ -16,6 +16,10 @@ describe "Frogger" {
 		assert.equals("ranaInicio.jpg", primero.image())
 	}
 
+	test "Puntos al iniciar el juego" {
+		assert.equals(0, rana.puntos())
+	}
+
 	test "Imagen de la rana al iniciar el juego" {
 		assert.equals("rana.png", rana.image())
 	}
@@ -30,10 +34,6 @@ describe "Frogger" {
 		estanque2.teEncontro(rana)
 		estanque3.teEncontro(rana)
 		assert.equals(3, rana.estanques())
-	}
-
-	test "Puntos al iniciar el juego" {
-		assert.equals(0, rana.puntos())
 	}
 
 	test "Puntos al llegar a un estanque" {
@@ -83,12 +83,14 @@ describe "Frogger" {
 		auto3.teEncontro(rana)
 		assert.equals(game.at(10, 0), rana.position())
 	}
+
 	test "Al perder 3 veces, no le quedan vidas" {
 		rana.restarVidas()
 		rana.restarVidas()
 		rana.restarVidas()
 		assert.equals(0, rana.vidas())
 	}
+
 	test "Al perder el juego la imagen de la rana cambia por la de Game Over" {
 		rana.restarVidas()
 		rana.restarVidas()

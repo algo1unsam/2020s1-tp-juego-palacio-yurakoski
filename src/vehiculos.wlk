@@ -20,12 +20,12 @@ class Vehiculo {
 
 	method teEncontro(anfibio) {
 		rana.restarVidas()
+		//game.sound("perder.mp3").play()
 		game.removeVisual(anfibio)
 		anfibio.position(game.at(10, 0))
 		game.addVisual(anfibio)
 		anfibio.puntos(0)
 		game.say(anfibio, "perdi todos los puntos y una vida")
-		game.sound("perder.mp3").play()
 	}
 
 }

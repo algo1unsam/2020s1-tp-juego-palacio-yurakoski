@@ -1,0 +1,100 @@
+import wollok.game.*
+import bloques.*
+import casas.*
+import objetos.*
+import vehiculos.*
+import visuales.*
+import configuracion.*
+
+describe "Frogger" {
+
+	fixture {
+		visuales.agregarVisuales()
+	}
+
+	test "Imagen de inicio" {
+		assert.equals("ranaInicio.jpg", primero.image())
+	}
+
+	test "Puntos al iniciar el juego" {
+		assert.equals(0, rana.puntos())
+	}
+
+	test "Imagen de la rana al iniciar el juego" {
+		assert.equals("rana.png", rana.image())
+	}
+
+	test "Cuando una rana llega a 1 estanque suma 1 a cantidad de estanques" {
+		estanque1.teEncontro(rana)
+		assert.equals(1, rana.estanques())
+	}
+
+	test "Cuando una rana llega a 3 estanque suma 3 a cantidad de estanques" {
+		estanque1.teEncontro(rana)
+		estanque2.teEncontro(rana)
+		estanque3.teEncontro(rana)
+		assert.equals(3, rana.estanques())
+	}
+
+	test "Puntos al llegar a un estanque" {
+		estanque1.teEncontro(rana)
+		assert.equals(150, rana.puntos())
+	}
+
+	test "Puntos al llegar a 2 estanques" {
+		estanque1.teEncontro(rana)
+		estanque2.teEncontro(rana)
+		assert.equals(300, rana.puntos())
+	}
+
+	test "Puntos al llegar a 2 estanques y ser atropellada" {
+		estanque1.teEncontro(rana)
+		estanque2.teEncontro(rana)
+		auto1.teEncontro(rana)
+		assert.equals(0, rana.puntos())
+	}
+
+	test "Puntaje total obtenido al finalizar el juego sin perder ninguna vida" {
+		estanque1.teEncontro(rana)
+		estanque2.teEncontro(rana)
+		estanque3.teEncontro(rana)
+		estanque4.teEncontro(rana)
+		estanque5.teEncontro(rana)
+		assert.equals(750, rana.puntos())
+	}
+
+	test "Vidas al iniciar el juego" {
+		assert.equals(3, rana.vidas())
+	}
+
+	test "Vidas al ser atropellada 1 vez" {
+		auto1.teEncontro(rana)
+		assert.equals(2, rana.vidas())
+	}
+
+	test "Vidas al ser atropellada 2 veces" {
+		auto1.teEncontro(rana)
+		auto2.teEncontro(rana)
+		assert.equals(1, rana.vidas())
+	}
+
+	test "La rana vuelve a su posicion cuando es atropellada" {
+		rana.position(game.at(10, 3))
+		auto3.teEncontro(rana)
+		assert.equals(game.at(10, 0), rana.position())
+	}
+
+	test "Al perder 3 veces, no le quedan vidas" {
+		rana.restarVidas()
+		rana.restarVidas()
+		rana.restarVidas()
+		assert.equals(0, rana.vidas())
+	}
+
+	test "Al perder el juego la imagen de la rana cambia por la de Game Over" {
+		rana.restarVidas()
+		rana.restarVidas()
+		rana.restarVidas()
+		assert.equals("perdiste.png", rana.image())
+}
+

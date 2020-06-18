@@ -43,7 +43,7 @@ object configuracion {
 object cierre {
 
 	method cerrar() {
-		//game.sound("final.mp3").play()
+		game.schedule(10,{game.sound("final.mp3").play()})
 		game.schedule(6000, { game.stop()})
 	}
 

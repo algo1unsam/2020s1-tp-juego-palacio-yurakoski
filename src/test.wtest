@@ -4,11 +4,16 @@ import casas.*
 import objetos.*
 import vehiculos.*
 import visuales.*
+import configuracion.*
 
 describe "Frogger" {
 
 	fixture {
 		visuales.agregarVisuales()
+	}
+
+	test "Imagen de inicio" {
+		assert.equals("ranaInicio.jpg", primero.image())
 	}
 
 	test "Imagen de la rana al iniciar el juego" {
@@ -78,6 +83,16 @@ describe "Frogger" {
 		auto3.teEncontro(rana)
 		assert.equals(game.at(10, 0), rana.position())
 	}
-
+	test "Al perder 3 veces, no le quedan vidas" {
+		rana.restarVidas()
+		rana.restarVidas()
+		rana.restarVidas()
+		assert.equals(0, rana.vidas())
+	}
+	test "Al perder el juego la imagen de la rana cambia por la de Game Over" {
+		rana.restarVidas()
+		rana.restarVidas()
+		rana.restarVidas()
+		assert.equals("perdiste.png", rana.image())
 }
 

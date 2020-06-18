@@ -32,7 +32,6 @@ object rana {
 		vidas.remove(vidas.last())
 		if (vidas.size() == 0) {
 			self.image("perdiste.png")
-			game.sound("final.mp3").play()
 			game.addVisual(africanos)
 			cierre.cerrar()
 		}
